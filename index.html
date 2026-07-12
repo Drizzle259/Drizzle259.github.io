@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Drizzle259 的个人学习笔记空间">
+  <meta name="theme-color" content="#10131a">
+  <title>拾光笔记</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wallpaper" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">拾</span><span data-site-title>拾光笔记</span></a>
+    <div class="top-actions">
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索笔记…" aria-label="搜索笔记"><kbd>⌘ K</kbd></label>
+      <button class="icon-button" id="themeButton" aria-label="更换背景" title="更换背景">✦</button>
+      <button class="primary-button" id="importButton">＋ 导入笔记</button>
+      <input id="noteFileInput" type="file" accept=".md,.markdown,.txt" hidden multiple>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> MY LEARNING GARDEN</p>
+        <h1>把知识写下来，<br><em>让思考有迹可循。</em></h1>
+        <p data-site-subtitle>记录学习中的理解、问题与灵感，让每一次输入都慢慢长成自己的知识体系。</p>
+      </div>
+      <div class="floating-note" aria-hidden="true">
+        <span class="pin"></span>
+        <small>TODAY'S THOUGHT</small>
+        <p>学习不是收集答案，<br>而是发现更好的问题。</p>
+        <span class="scribble">keep growing ↗</span>
+      </div>
+    </section>
+
+    <section class="notes-section" aria-labelledby="notesTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">NOTE LIBRARY</p><h2 id="notesTitle">我的笔记</h2></div>
+        <p id="noteCount"></p>
+      </div>
+      <div class="filter-row" id="filters" aria-label="笔记分类"></div>
+      <div class="notes-grid" id="notesGrid"></div>
+      <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>没有找到相关笔记</h3><p>换一个关键词或分类试试。</p></div>
+    </section>
+  </main>
+
+  <aside class="customizer" id="customizer" aria-hidden="true">
+    <div class="drawer-header"><div><small>MAKE IT YOURS</small><h2>装扮空间</h2></div><button class="close-button" id="closeCustomizer" aria-label="关闭">×</button></div>
+    <div class="setting-group"><h3>选择背景</h3><p>点击即可预览并保存到当前浏览器。</p><div class="background-grid" id="backgroundGrid"></div></div>
+    <div class="setting-group"><h3>上传自己的背景</h3><p>支持 JPG、PNG、WebP，图片只保存在你的浏览器中。</p><label class="upload-background">选择图片<input id="backgroundInput" type="file" accept="image/*" hidden></label><button class="text-button" id="resetBackground">恢复默认背景</button></div>
+    <div class="setting-group tip"><span>✎</span><div><h3>想永久修改？</h3><p>打开 <code>config.js</code>，标题、介绍、分类和预设背景都集中在那里。</p></div></div>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <dialog class="note-dialog" id="noteDialog">
+    <button class="dialog-close" id="closeNote" aria-label="关闭笔记">×</button>
+    <div class="note-meta" id="dialogMeta"></div>
+    <article class="markdown" id="noteContent"></article>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer><span>© <span id="year"></span> <span data-site-title>拾光笔记</span></span><span>Write · Reflect · Grow</span></footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

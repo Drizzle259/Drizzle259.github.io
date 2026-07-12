@@ -10,14 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="stylesheet" href="style.css?v=20260713-1">
+  <link rel="stylesheet" href="style.css?v=20260713-2">
 </head>
 <body>
   <div class="page-progress" id="pageProgress"></div>
   <div class="site-bg" aria-hidden="true"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grain"></div></div>
 
   <header class="site-header" id="siteHeader">
-    <a class="logo" href="#home" aria-label="返回首页"><span data-initial>D</span><i></i></a>
+    <a class="logo" href="#home" aria-label="返回首页"><span data-initial>drizzle</span><i></i></a>
     <nav id="mainNav" aria-label="主要导航">
       <a href="#about">关于</a><a href="#resume">履历</a><a href="#calendar">日历</a><a href="#notes">笔记</a>
     </nav>
@@ -32,9 +32,9 @@
     <section class="hero section-shell" id="home">
       <div class="hero-copy" data-aos="fade-up">
         <p class="kicker"><span></span> HELLO, I AM</p>
-        <h1><span data-first-name>Drizzle</span><br><em data-last-name>259.</em></h1>
-        <p class="hero-role">一名 <strong id="typedRole">持续学习的探索者</strong></p>
-        <p class="hero-intro" data-profile-intro>我关注编程、数学与数据，用项目理解知识，也用笔记记录成长。</p>
+        <h1><span data-first-name>Wenjie</span><br><em data-last-name>Zou.</em></h1>
+        <p class="hero-role">一名 <strong id="typedRole">电子科技大学本科生</strong></p>
+        <p class="hero-intro" data-profile-intro>就读于电子科技大学计算机科学专业，关注人工智能、机器学习与扩散模型。</p>
         <div class="hero-buttons">
           <a class="button dark" href="#about">了解更多 <i data-lucide="arrow-down"></i></a>
           <button class="button light" id="printResume"><i data-lucide="printer"></i> 保存简历</button>
@@ -46,7 +46,7 @@
             <img class="profile-expression" src="assets/sticker-love.png" alt="抱着爱心的个人形象">
           </div>
           <div class="hero-info-card">
-            <div class="hero-info-title"><span data-full-name>Wenjie Zou</span><small id="heroPrimaryRole">持续学习的探索者</small></div>
+            <div class="hero-info-title"><span data-full-name>Wenjie Zou</span><small id="heroPrimaryRole">电子科技大学本科生</small></div>
             <div class="hero-info-grid" id="heroQuickInfo"></div>
             <div class="hero-social-links" id="heroSocialLinks"></div>
           </div>
@@ -55,15 +55,25 @@
       <div class="hero-foot"><span>SCROLL TO DISCOVER</span><div></div><span id="localTime">--:-- CST</span></div>
     </section>
 
-    <section class="marquee" aria-label="个人关键词"><div id="marqueeTrack"></div></section>
+    <section class="dino-strip" aria-label="奔跑的小恐龙装饰">
+      <div class="dino-cloud cloud-a" aria-hidden="true"></div><div class="dino-cloud cloud-b" aria-hidden="true"></div>
+      <div class="dino-stage" aria-hidden="true">
+        <div class="dino-runner">
+          <svg viewBox="0 0 72 70" role="presentation"><path d="M15 50H8v-7H2V29h7v7h7V15h7V8h7V2h28v6h6v20H42v7h8v7H35v8h-7v13h-8v-8h-5v8H8v-7h7z"/><rect x="48" y="8" width="5" height="5" class="dino-eye"/></svg>
+        </div>
+        <div class="cactus cactus-a"><i></i><b></b></div><div class="cactus cactus-b"><i></i><b></b></div><div class="cactus cactus-c"><i></i><b></b></div>
+        <div class="dino-ground"></div>
+      </div>
+      <span class="dino-caption">KEEP LEARNING · KEEP EXPLORING</span>
+    </section>
 
     <section class="about section-shell section-pad" id="about">
       <div class="section-label" data-aos="fade-right"><span>01</span> ABOUT ME</div>
       <div class="about-grid">
-        <div data-aos="fade-up"><p class="overline">A LITTLE ABOUT ME</p><h2>保持好奇，<br>把想法变成<em>作品。</em></h2></div>
+        <div data-aos="fade-up"><p class="overline">A LITTLE ABOUT ME</p><h2>一名电子科技大学<br><em>UESTC</em> 的学生，<br>正在努力科研学习。</h2></div>
         <div class="about-copy" data-aos="fade-up" data-aos-delay="100">
-          <p class="lead" data-about-lead>我是一名正在构建自己知识体系的学习者。</p>
-          <p data-about-detail>我喜欢从问题出发，通过代码实验、课程学习和持续记录，让抽象知识变得清晰而具体。</p>
+          <p class="lead" data-about-lead>我是一名电子科技大学（UESTC）的学生。</p>
+          <p data-about-detail>我正在努力投入科研与学习，通过代码实验、课程训练和持续记录探索人工智能。</p>
           <div class="quick-facts" id="quickFacts"></div>
         </div>
       </div>
@@ -78,7 +88,7 @@
         <div class="timeline" id="timeline"></div>
         <aside class="resume-side" data-aos="fade-left">
           <div class="side-card"><p class="overline">CORE SKILLS</p><div id="skillBars"></div></div>
-          <div class="side-card quote"><i data-lucide="quote"></i><p data-motto>“先完成，再完善；保持输入，也保持输出。”</p></div>
+          <div class="side-card quote"><i data-lucide="quote"></i><p data-motto>My aim is to discover a learning procedure that is efficient at finding complex structure in large, high-dimensional datasets — Geoffrey Hinton</p></div>
         </aside>
       </div>
     </section>
@@ -113,6 +123,12 @@
       <div class="section-label" data-aos="fade-right"><span>04</span> NOTES</div>
       <div class="section-title-row" data-aos="fade-up"><div><p class="overline">RECENT WRITING</p><h2>学习<em>笔记</em></h2></div><p class="section-desc">记录理解、问题与灵感。笔记是这个个人主页的一部分，而不是它的全部。</p></div>
       <div class="note-toolbar" data-aos="fade-up"><div class="note-filters" id="noteFilters"></div><label class="note-search"><i data-lucide="search"></i><input id="noteSearch" type="search" placeholder="搜索笔记"></label></div>
+      <div class="note-manager" data-aos="fade-up">
+        <div class="note-manager-copy"><p class="overline">LOCAL NOTE DESK</p><h3>新建一级分类，或拖入 Markdown</h3><small>本地导入仅保存在当前浏览器；提交到 GitHub 后才会对所有访客公开。</small></div>
+        <div class="category-creator"><input id="newCategoryName" maxlength="20" placeholder="分类名称"><button id="addCategory" type="button"><i data-lucide="folder-plus"></i> 新建分类</button></div>
+        <label class="category-picker">存入分类<select id="uploadCategory"></select></label>
+        <label class="note-dropzone" id="noteDropzone" tabindex="0"><i data-lucide="file-up"></i><span><strong>拖入 .md 文件</strong><small>或点击选择，可一次导入多个文件</small></span><input id="noteFileInput" type="file" accept=".md,text/markdown,text/plain" multiple hidden></label>
+      </div>
       <div class="note-grid" id="noteGrid"></div>
       <div class="empty-state" id="emptyState" hidden>没有找到相关笔记。</div>
       <img class="hover-sticker hover-sticker-sparkle" src="assets/sticker-sparkle.png" alt="闪亮表情装饰" tabindex="0">
@@ -131,10 +147,10 @@
   <dialog class="note-dialog" id="noteDialog"><button class="dialog-close" id="closeNote">×</button><div class="dialog-meta" id="dialogMeta"></div><article class="markdown" id="noteContent"></article></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="config.js?v=20260713-1"></script>
+  <script src="config.js?v=20260713-2"></script>
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="script.js?v=20260713-1"></script>
+  <script src="script.js?v=20260713-2"></script>
 </body>
 </html>

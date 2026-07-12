@@ -7,13 +7,13 @@ window.PORTFOLIO_CONFIG = {
     fullName: "Wenjie Zou",
     firstName: "Wenjie",
     lastName: "Zou.",
-    initial: "WZ",
+    initial: "drizzle",
     location: "China",
-    roles: ["持续学习的探索者", "Python 学习者", "知识记录者", "问题解决者"],
-    intro: "我关注编程、数学与数据，用项目理解知识，也用笔记记录成长。",
-    aboutLead: "我是一名正在构建自己知识体系的学习者。",
-    aboutDetail: "我喜欢从问题出发，通过代码实验、课程学习和持续记录，让抽象知识变得清晰而具体。",
-    motto: "“先完成，再完善；保持输入，也保持输出。”"
+    roles: ["电子科技大学本科生", "人工智能学习者", "科研探索者", "问题解决者"],
+    intro: "就读于电子科技大学计算机科学专业，关注人工智能、机器学习与扩散模型。",
+    aboutLead: "我是一名电子科技大学（UESTC）的学生。",
+    aboutDetail: "我正在努力投入科研与学习，通过代码实验、课程训练和持续记录探索人工智能。",
+    motto: "My aim is to discover a learning procedure that is efficient at finding complex structure in large, high-dimensional datasets — Geoffrey Hinton"
   },
   keywords: [
     "zouwj.drizzle@gmail.com",
@@ -24,9 +24,9 @@ window.PORTFOLIO_CONFIG = {
     "zouwj.drizzle@gmail.com"
   ],
   facts: [
-    { label: "身份", value: "学生 / 学习者" },
-    { label: "方向", value: "编程 · 数学 · 数据" },
-    { label: "语言", value: "中文 · English" }
+    { label: "IDENTITY", value: "SOPHOMORE" },
+    { label: "DIRECTION", value: "ARTIFICIAL INTELLIGENCE" },
+    { label: "LANGUAGE", value: "CHINESE · ENGLISH" }
   ],
   skills: [
     { name: "C / C++", level: 75 },
@@ -37,7 +37,7 @@ window.PORTFOLIO_CONFIG = {
     { name: "Diffusion Model", level: 62 }
   ],
   timeline: [
-    { period: "现在", type: "学习方向", title: "计算机与数据方向学习", place: "请填写你的学校 / 专业", description: "持续学习 Python、离散数学、数据分析和软件开发基础，通过课程与个人实践建立知识体系。" },
+    { period: "现在", type: "教育经历", title: "电子科技大学 · 计算机科学专业", place: "University of Electronic Science and Technology of China", description: "就读于电子科技大学计算机科学专业，围绕人工智能、机器学习与扩散模型开展课程学习和科研探索。" },
     { period: "2026", type: "学习实践", title: "个人知识主页", place: "GitHub Pages", description: "搭建并维护个人主页，用 Markdown 公开学习笔记，整理简历、技能与阶段性成果。" },
     { period: "未来", type: "目标", title: "请填写下一段经历", place: "课程 / 实习 / 比赛 / 项目", description: "在 config.js 中替换这一项，记录值得展示的学习、实践或工作经历。" }
   ],
@@ -45,12 +45,14 @@ window.PORTFOLIO_CONFIG = {
     { label: "GitHub", url: "https://github.com/Drizzle259", icon: "github" },
     { label: "zouwj.drizzle@gmail.com", url: "mailto:zouwj.drizzle@gmail.com", icon: "mail" }
   ],
+  noteCategories: ["随笔", "学习笔记", "工具"],
   notes: [
     { title: "欢迎来到我的个人主页", summary: "了解这个网站的结构，以及如何添加属于自己的内容。", category: "随笔", date: "2026-07-12", readTime: "3 分钟", color: "#ec6b4f", file: "notes/welcome.md" },
-    { title: "如何整理一篇学习笔记", summary: "用问题、理解、例子和复盘四个部分，建立清晰的知识结构。", category: "学习方法", date: "2026-07-10", readTime: "5 分钟", color: "#436f65", file: "notes/how-to-take-notes.md" },
+    { title: "如何整理一篇学习笔记", summary: "用问题、理解、例子和复盘四个部分，建立清晰的知识结构。", category: "学习笔记", date: "2026-07-10", readTime: "5 分钟", color: "#436f65", file: "notes/how-to-take-notes.md" },
     { title: "Markdown 快速参考", summary: "常用标题、列表、代码块、引用和链接的写法。", category: "工具", date: "2026-07-08", readTime: "4 分钟", color: "#5e70a2", file: "notes/markdown-guide.md" }
   ],
   activity: [
+    { date: "2026-07-13", type: "website", title: "同步个人资料与笔记工作台", detail: "更新 UESTC 学习信息、个人方向、小恐龙条带，并增加本地 Markdown 拖入功能。" },
     { date: "2026-07-12", type: "website", title: "修正日历与首页信息区", detail: "修复缓存导致的日历异常，调整方形形象框和基础信息布局。" },
     { date: "2026-07-12", type: "website", title: "优化个人主页视觉", detail: "更新海盐配色、素材装饰与响应式布局。" },
     { date: "2026-07-12", type: "website", title: "增加更新日历", detail: "开始记录网页改动和笔记发布时间。" },

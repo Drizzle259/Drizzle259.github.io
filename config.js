@@ -45,10 +45,17 @@ window.PORTFOLIO_CONFIG = {
     { title: "如何整理一篇学习笔记", summary: "用问题、理解、例子和复盘四个部分，建立清晰的知识结构。", category: "学习方法", date: "2026-07-10", readTime: "5 分钟", color: "#436f65", file: "notes/how-to-take-notes.md" },
     { title: "Markdown 快速参考", summary: "常用标题、列表、代码块、引用和链接的写法。", category: "工具", date: "2026-07-08", readTime: "4 分钟", color: "#5e70a2", file: "notes/markdown-guide.md" }
   ],
+  activity: [
+    { date: "2026-07-12", type: "website", title: "优化个人主页视觉", detail: "更新海盐配色、素材装饰与响应式布局。" },
+    { date: "2026-07-12", type: "website", title: "增加更新日历", detail: "开始记录网页改动和笔记发布时间。" },
+    { date: "2026-07-12", type: "note", title: "发布：欢迎来到我的个人主页", detail: "新增主页结构与使用说明。" },
+    { date: "2026-07-10", type: "note", title: "发布：如何整理一篇学习笔记", detail: "记录四步学习笔记法。" },
+    { date: "2026-07-08", type: "note", title: "发布：Markdown 快速参考", detail: "整理常用 Markdown 语法。" }
+  ],
   themes: [
-    { name: "暖纸", accent: "#ec6b4f", accent2: "#436f65", bg: "#f5f2eb", ink: "#171a19" },
-    { name: "海盐", accent: "#3d78a8", accent2: "#668f86", bg: "#edf3f4", ink: "#172027" },
-    { name: "暮色", accent: "#c87758", accent2: "#8a7cab", bg: "#24232a", ink: "#f3efe8" },
-    { name: "森野", accent: "#d17a52", accent2: "#446b50", bg: "#edf0e7", ink: "#172019" }
+    { name: "海盐", accent: "#1a73e8", accent2: "#5f91b8", bg: "#f4f9fc", ink: "#15212b" },
+    { name: "晴空", accent: "#3974c5", accent2: "#73a6c8", bg: "#eef7fd", ink: "#18232d" },
+    { name: "薄荷", accent: "#287d76", accent2: "#63a6a1", bg: "#f0f8f7", ink: "#172724" },
+    { name: "夜航", accent: "#8ab4f8", accent2: "#6f9dcc", bg: "#18222d", ink: "#edf4fa" }
   ]
 };

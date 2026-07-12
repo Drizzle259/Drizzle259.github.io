@@ -3,6 +3,8 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const escapeHtml = (value = "") => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 let activeCategory = "全部";
+let calendarCursor = new Date();
+let selectedActivityDate = "";
 
 function fillProfile() {
   const p = config.profile;
@@ -67,6 +69,47 @@ function renderNotes() {
   if (window.VanillaTilt) VanillaTilt.init($$('[data-tilt]'), { glare: true, 'max-glare': .08 });
 }
 
+function dateKey(year, month, day) {
+  return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+function renderActivityList(events = config.activity) {
+  const sorted = [...events].sort((a, b) => b.date.localeCompare(a.date));
+  $('#activityCount').textContent = sorted.length;
+  $('#activityList').innerHTML = sorted.length ? sorted.slice(0, 8).map(event => `
+    <article class="activity-item">
+      <div class="activity-icon ${event.type === 'note' ? 'note' : ''}"><i data-lucide="${event.type === 'note' ? 'file-text' : 'wand-sparkles'}"></i></div>
+      <div><time>${escapeHtml(event.date)}</time><h4>${escapeHtml(event.title)}</h4><p>${escapeHtml(event.detail)}</p></div>
+    </article>`).join('') : '<div class="empty-state">这一天还没有记录。</div>';
+  if (window.lucide) lucide.createIcons();
+}
+
+function renderCalendar() {
+  const year = calendarCursor.getFullYear();
+  const month = calendarCursor.getMonth();
+  const today = new Date();
+  const firstDay = new Date(year, month, 1);
+  const startOffset = (firstDay.getDay() + 6) % 7;
+  const start = new Date(year, month, 1 - startOffset);
+  const monthNames = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+  $('#calendarYear').textContent = year;
+  $('#calendarMonth').textContent = monthNames[month];
+  const days = [];
+  for (let index = 0; index < 42; index++) {
+    const date = new Date(start.getFullYear(), start.getMonth(), start.getDate() + index);
+    const key = dateKey(date.getFullYear(), date.getMonth(), date.getDate());
+    const events = config.activity.filter(event => event.date === key);
+    const isToday = key === dateKey(today.getFullYear(), today.getMonth(), today.getDate());
+    days.push(`<button class="calendar-day ${date.getMonth() !== month ? 'muted' : ''} ${isToday ? 'today' : ''} ${selectedActivityDate === key ? 'selected' : ''}" data-date="${key}" aria-label="${key}${events.length ? `，${events.length} 条记录` : ''}"><span class="day-number">${date.getDate()}</span>${events.length ? `<span class="event-dots">${events.slice(0, 3).map(event => `<i class="event-dot ${event.type === 'note' ? 'note' : ''}"></i>`).join('')}</span>` : ''}</button>`);
+  }
+  $('#calendarGrid').innerHTML = days.join('');
+  $$('.calendar-day').forEach(button => button.addEventListener('click', () => {
+    selectedActivityDate = selectedActivityDate === button.dataset.date ? '' : button.dataset.date;
+    renderCalendar();
+    renderActivityList(selectedActivityDate ? config.activity.filter(event => event.date === selectedActivityDate) : config.activity);
+  }));
+}
+
 function markdown(source) {
   let text = escapeHtml(source).replace(/```([\s\S]*?)```/g, (_, code) => `<pre><code>${code.trim()}</code></pre>`);
   text = text.replace(/^### (.+)$/gm, '<h3>$1</h3>').replace(/^## (.+)$/gm, '<h2>$1</h2>').replace(/^# (.+)$/gm, '<h1>$1</h1>').replace(/^&gt; (.+)$/gm, '<blockquote>$1</blockquote>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>').replace(/^- (.+)$/gm, '<li>$1</li>');
@@ -114,9 +157,12 @@ function renderThemes() {
 
 function showToast(message) { const toast = $('#toast'); toast.textContent = message; toast.classList.add('show'); clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove('show'), 3000); }
 
-fillProfile(); renderStaticSections(); renderFilters(); renderNotes(); renderThemes(); typeRoles(); localClock(); setInterval(localClock, 30000);
+fillProfile(); renderStaticSections(); renderFilters(); renderNotes(); renderCalendar(); renderActivityList(); renderThemes(); typeRoles(); localClock(); setInterval(localClock, 30000);
 $('#year').textContent = new Date().getFullYear();
 $('#noteSearch').addEventListener('input', renderNotes);
+$('#calendarPrev').addEventListener('click', () => { calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth() - 1, 1); selectedActivityDate = ''; renderCalendar(); renderActivityList(); });
+$('#calendarNext').addEventListener('click', () => { calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth() + 1, 1); selectedActivityDate = ''; renderCalendar(); renderActivityList(); });
+$('#calendarToday').addEventListener('click', () => { calendarCursor = new Date(); selectedActivityDate = dateKey(calendarCursor.getFullYear(), calendarCursor.getMonth(), calendarCursor.getDate()); renderCalendar(); renderActivityList(config.activity.filter(event => event.date === selectedActivityDate)); });
 $('#closeNote').addEventListener('click', () => $('#noteDialog').close());
 $('#noteDialog').addEventListener('click', event => { if (event.target === $('#noteDialog')) $('#noteDialog').close(); });
 $('#printResume').addEventListener('click', () => print()); $('#printResumeSecondary').addEventListener('click', () => print());

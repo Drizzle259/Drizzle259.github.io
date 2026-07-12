@@ -19,7 +19,7 @@
   <header class="site-header" id="siteHeader">
     <a class="logo" href="#home" aria-label="返回首页"><span data-initial>D</span><i></i></a>
     <nav id="mainNav" aria-label="主要导航">
-      <a href="#about">关于</a><a href="#resume">履历</a><a href="#notes">笔记</a><a href="#contact">联系</a>
+      <a href="#about">关于</a><a href="#resume">履历</a><a href="#calendar">日历</a><a href="#notes">笔记</a><a href="#contact">联系</a>
     </nav>
     <div class="header-actions">
       <button class="round-button" id="appearanceButton" aria-label="外观设置" title="外观设置"><i data-lucide="palette"></i></button>
@@ -48,6 +48,8 @@
         </div>
         <div class="floating-tag tag-one">THINK <i>↗</i></div>
         <div class="floating-tag tag-two">CREATE <i>✦</i></div>
+        <img class="sticker sticker-love" src="assets/sticker-love.png" alt="抱着爱心的装饰表情">
+        <img class="sticker sticker-sparkle" src="assets/sticker-sparkle.png" alt="闪亮表情装饰">
         <div class="circle-text">LEARN · BUILD · SHARE · REPEAT ·</div>
       </div>
       <div class="hero-foot"><span>SCROLL TO DISCOVER</span><div></div><span id="localTime">--:-- CST</span></div>
@@ -66,6 +68,7 @@
         </div>
       </div>
       <div class="skill-cloud" id="skillCloud" data-aos="fade-up"></div>
+      <img class="section-sticker" src="assets/sticker-star.png" alt="星星表情装饰" data-aos="zoom-in">
     </section>
 
     <section class="resume section-shell section-pad" id="resume">
@@ -80,12 +83,39 @@
       </div>
     </section>
 
+    <section class="calendar-section section-shell section-pad" id="calendar">
+      <div class="section-label" data-aos="fade-right"><span>03</span> ACTIVITY</div>
+      <div class="section-title-row" data-aos="fade-up">
+        <div><p class="overline">CHANGELOG CALENDAR</p><h2>创作与<em>更新</em></h2></div>
+        <p class="section-desc">记录每一次网页改动与笔记发布，让持续更新变得看得见。</p>
+      </div>
+      <div class="calendar-layout" data-aos="fade-up">
+        <div class="calendar-card">
+          <header class="calendar-head">
+            <div><span class="calendar-year" id="calendarYear"></span><h3 id="calendarMonth"></h3></div>
+            <div class="calendar-controls">
+              <button id="calendarToday">今天</button>
+              <button id="calendarPrev" aria-label="上个月"><i data-lucide="chevron-left"></i></button>
+              <button id="calendarNext" aria-label="下个月"><i data-lucide="chevron-right"></i></button>
+            </div>
+          </header>
+          <div class="calendar-week" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+        <aside class="activity-panel">
+          <div class="activity-panel-head"><div><p class="overline">RECENT ACTIVITY</p><h3>最近动态</h3></div><span id="activityCount"></span></div>
+          <div class="activity-list" id="activityList"></div>
+        </aside>
+      </div>
+    </section>
+
     <section class="notes section-shell section-pad" id="notes">
-      <div class="section-label" data-aos="fade-right"><span>03</span> NOTES</div>
+      <div class="section-label" data-aos="fade-right"><span>04</span> NOTES</div>
       <div class="section-title-row" data-aos="fade-up"><div><p class="overline">RECENT WRITING</p><h2>学习<em>笔记</em></h2></div><p class="section-desc">记录理解、问题与灵感。笔记是这个个人主页的一部分，而不是它的全部。</p></div>
       <div class="note-toolbar" data-aos="fade-up"><div class="note-filters" id="noteFilters"></div><label class="note-search"><i data-lucide="search"></i><input id="noteSearch" type="search" placeholder="搜索笔记"></label></div>
       <div class="note-grid" id="noteGrid"></div>
       <div class="empty-state" id="emptyState" hidden>没有找到相关笔记。</div>
+      <img class="notes-sticker" src="assets/sticker-sparkle.png" alt="笔记区表情装饰" aria-hidden="true">
     </section>
 
     <section class="contact section-shell section-pad" id="contact">

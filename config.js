@@ -4,10 +4,10 @@
    ============================================================ */
 window.PORTFOLIO_CONFIG = {
   profile: {
-    fullName: "Drizzle259",
-    firstName: "Drizzle",
-    lastName: "259.",
-    initial: "D",
+    fullName: "Wenjie Zou",
+    firstName: "Wenjie",
+    lastName: "Zou.",
+    initial: "WZ",
     location: "China",
     roles: ["持续学习的探索者", "Python 学习者", "知识记录者", "问题解决者"],
     intro: "我关注编程、数学与数据，用项目理解知识，也用笔记记录成长。",
@@ -15,19 +15,26 @@ window.PORTFOLIO_CONFIG = {
     aboutDetail: "我喜欢从问题出发，通过代码实验、课程学习和持续记录，让抽象知识变得清晰而具体。",
     motto: "“先完成，再完善；保持输入，也保持输出。”"
   },
-  keywords: ["PYTHON", "DISCRETE MATH", "DATA", "LEARNING", "WRITING", "CURIOSITY"],
+  keywords: [
+    "zouwj.drizzle@gmail.com",
+    "zouwj.drizzle@gmail.com",
+    "zouwj.drizzle@gmail.com",
+    "zouwj.drizzle@gmail.com",
+    "zouwj.drizzle@gmail.com",
+    "zouwj.drizzle@gmail.com"
+  ],
   facts: [
     { label: "身份", value: "学生 / 学习者" },
     { label: "方向", value: "编程 · 数学 · 数据" },
     { label: "语言", value: "中文 · English" }
   ],
   skills: [
+    { name: "C / C++", level: 75 },
     { name: "Python", level: 78 },
-    { name: "Data Analysis", level: 65 },
-    { name: "Git & GitHub", level: 62 },
-    { name: "HTML / CSS / JS", level: 58 },
-    { name: "Discrete Mathematics", level: 70 },
-    { name: "Technical Writing", level: 72 }
+    { name: "PyTorch", level: 70 },
+    { name: "Data Structure", level: 72 },
+    { name: "Machine Learning", level: 68 },
+    { name: "Diffusion Model", level: 62 }
   ],
   timeline: [
     { period: "现在", type: "学习方向", title: "计算机与数据方向学习", place: "请填写你的学校 / 专业", description: "持续学习 Python、离散数学、数据分析和软件开发基础，通过课程与个人实践建立知识体系。" },
@@ -36,7 +43,7 @@ window.PORTFOLIO_CONFIG = {
   ],
   social: [
     { label: "GitHub", url: "https://github.com/Drizzle259", icon: "github" },
-    { label: "Email", url: "mailto:your-email@example.com", icon: "mail" }
+    { label: "zouwj.drizzle@gmail.com", url: "mailto:zouwj.drizzle@gmail.com", icon: "mail" }
   ],
   notes: [
     { title: "欢迎来到我的个人主页", summary: "了解这个网站的结构，以及如何添加属于自己的内容。", category: "随笔", date: "2026-07-12", readTime: "3 分钟", color: "#ec6b4f", file: "notes/welcome.md" },

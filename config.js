@@ -46,18 +46,19 @@ window.PORTFOLIO_CONFIG = {
     { label: "zouwj.drizzle@gmail.com", url: "mailto:zouwj.drizzle@gmail.com", icon: "mail" }
   ],
   notes: [
-    { title: "欢迎来到我的个人主页", summary: "了解这个网站的结构，以及如何添加属于自己的内容。", category: "随笔", date: "2026-07-12", readTime: "3 分钟", color: "#ec6b4f", file: "notes/welcome.md" },
-    { title: "如何整理一篇学习笔记", summary: "用问题、理解、例子和复盘四个部分，建立清晰的知识结构。", category: "学习笔记", date: "2026-07-10", readTime: "5 分钟", color: "#436f65", file: "notes/how-to-take-notes.md" },
-    { title: "Markdown 快速参考", summary: "常用标题、列表、代码块、引用和链接的写法。", category: "工具", date: "2026-07-08", readTime: "4 分钟", color: "#5e70a2", file: "notes/markdown-guide.md" }
+    { title: "2026-07-13", summary: "记录概率论、机器学习、扩散模型与流模型的暑期目标，以及论文、项目和实习计划。", category: "随笔", date: "2026-07-13", readTime: "2 分钟", color: "#7b8fbd", file: "notes/2026-07-13.md" },
+    { title: "欢迎来到我的个人主页", summary: "介绍这个个人空间中的个人信息、学习经历与公开笔记。", category: "随笔", date: "2026-07-12", readTime: "1 分钟", color: "#ec6b4f", file: "notes/welcome.md" },
+    { title: "markdown语法", summary: "整理标题、列表、代码、数学公式、表格、链接与图片等 Markdown 写法。", category: "工具", date: "2026-07-13", readTime: "8 分钟", color: "#5e70a2", file: "notes/markdown-guide.md" }
   ],
   activity: [
+    { date: "2026-07-13", type: "note", title: "发布：2026-07-13", detail: "记录暑期学习方向、论文阅读、项目复现与实习目标。" },
+    { date: "2026-07-13", type: "note", title: "更新：markdown语法", detail: "补充公式、表格、任务列表、脚注、链接与图片等语法示例。" },
     { date: "2026-07-13", type: "website", title: "同步个人资料与视觉细节", detail: "更新 UESTC 学习信息、个人方向，并把装饰条带改为 Chrome 原版风格的小恐龙场景。" },
     { date: "2026-07-12", type: "website", title: "修正日历与首页信息区", detail: "修复缓存导致的日历异常，调整方形形象框和基础信息布局。" },
     { date: "2026-07-12", type: "website", title: "优化个人主页视觉", detail: "更新海盐配色、素材装饰与响应式布局。" },
     { date: "2026-07-12", type: "website", title: "增加更新日历", detail: "开始记录网页改动和笔记发布时间。" },
     { date: "2026-07-12", type: "note", title: "发布：欢迎来到我的个人主页", detail: "新增主页结构与使用说明。" },
-    { date: "2026-07-10", type: "note", title: "发布：如何整理一篇学习笔记", detail: "记录四步学习笔记法。" },
-    { date: "2026-07-08", type: "note", title: "发布：Markdown 快速参考", detail: "整理常用 Markdown 语法。" }
+    { date: "2026-07-08", type: "note", title: "发布：markdown语法", detail: "整理常用 Markdown 语法。" }
   ],
   themes: [
     { name: "海盐", accent: "#1a73e8", accent2: "#5f91b8", bg: "#f4f9fc", ink: "#15212b" },

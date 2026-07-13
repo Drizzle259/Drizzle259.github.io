@@ -156,17 +156,14 @@ function initDinoCanvas() {
   if (!canvas || !runner) return;
   const context = canvas.getContext('2d');
   const sprite = new Image();
-  const frame = { y: 2, width: 44, height: 47, jumpX: 848, runX: [936, 980] };
+  // Native 2x sprite frames. Canvas and CSS use the same 88:94 ratio.
+  const frame = { y: 2, width: 88, height: 94, jumpX: 1678, runX: [1854, 1942] };
   let lastFrame = -1;
 
   const paintFrame = sourceX => {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.imageSmoothingEnabled = false;
     context.drawImage(sprite, sourceX, frame.y, frame.width, frame.height, 0, 0, canvas.width, canvas.height);
-    context.globalCompositeOperation = 'source-in';
-    context.fillStyle = '#535353';
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    context.globalCompositeOperation = 'source-over';
   };
 
   sprite.onload = () => {
@@ -184,7 +181,7 @@ function initDinoCanvas() {
     };
     requestAnimationFrame(animate);
   };
-  sprite.src = 'assets/dino-sprite-sheet.png?v=20260713-7';
+  sprite.src = 'assets/dino-sprite-sheet.png?v=20260713-10';
 }
 
 fillProfile(); renderStaticSections(); renderFilters(); renderNotes(); renderCalendar(); renderActivityList(); renderThemes(); typeRoles(); initDinoCanvas(); localClock(); setInterval(localClock, 30000);

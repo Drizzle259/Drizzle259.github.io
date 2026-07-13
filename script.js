@@ -150,7 +150,44 @@ function renderThemes() {
 
 function showToast(message) { const toast = $('#toast'); toast.textContent = message; toast.classList.add('show'); clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove('show'), 3000); }
 
-fillProfile(); renderStaticSections(); renderFilters(); renderNotes(); renderCalendar(); renderActivityList(); renderThemes(); typeRoles(); localClock(); setInterval(localClock, 30000);
+function initDinoCanvas() {
+  const canvas = $('#dinoCanvas');
+  const runner = $('.dino-runner');
+  if (!canvas || !runner) return;
+  const context = canvas.getContext('2d');
+  const sprite = new Image();
+  const frame = { y: 2, width: 44, height: 47, jumpX: 848, runX: [936, 980] };
+  let lastFrame = -1;
+
+  const paintFrame = sourceX => {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.imageSmoothingEnabled = false;
+    context.drawImage(sprite, sourceX, frame.y, frame.width, frame.height, 0, 0, canvas.width, canvas.height);
+    context.globalCompositeOperation = 'source-in';
+    context.fillStyle = '#535353';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.globalCompositeOperation = 'source-over';
+  };
+
+  sprite.onload = () => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return paintFrame(frame.jumpX);
+    const animate = time => {
+      const jumpAnimation = runner.getAnimations().find(animation => animation.animationName === 'dinoJump');
+      const cycleTime = Number(jumpAnimation?.currentTime || 0) % 2400;
+      const jumping = cycleTime >= 576 && cycleTime < 1680;
+      const nextFrame = jumping ? 2 : Math.floor(time / 115) % 2;
+      if (nextFrame !== lastFrame) {
+        paintFrame(nextFrame === 2 ? frame.jumpX : frame.runX[nextFrame]);
+        lastFrame = nextFrame;
+      }
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  };
+  sprite.src = 'assets/dino-sprite-sheet.png?v=20260713-7';
+}
+
+fillProfile(); renderStaticSections(); renderFilters(); renderNotes(); renderCalendar(); renderActivityList(); renderThemes(); typeRoles(); initDinoCanvas(); localClock(); setInterval(localClock, 30000);
 $('#year').textContent = new Date().getFullYear();
 $('#noteSearch').addEventListener('input', renderNotes);
 $('#calendarPrev').addEventListener('click', () => { calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth() - 1, 1); selectedActivityDate = ''; renderCalendar(); renderActivityList(); });
